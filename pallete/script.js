@@ -6,6 +6,9 @@ var pencil = document.querySelector('.pencil');
 var choise_color = document.querySelector('.color_input');
 var choise_prev_color = document.querySelector('.color_input.prev');
 var pencil_flag = false;
+var fill_flag = false;
+var pixelData;
+var pippete = true;
 document.querySelector('.color_input.blue').addEventListener('click',function (event) {
     prev = current_color;
     choise_color.style.background = "#0000FF";
@@ -18,16 +21,33 @@ document.querySelector('.color_input.red').addEventListener('click',function (ev
     current_color = "#FF0000";
     choise_prev_color.style.background = prev;
 })
-document.querySelector('.bucket ').addEventListener('click',function (event) {
+var bucket = document.querySelector('.bucket');
+
+bucket.addEventListener('click',function (event) {
     this.classList.add('bg_active');
    pencil_flag = false;
+   fill_flag = true;
     CleanPencil();
+    Fill();
 
-
+    
+})
+document.querySelector('.pipette').addEventListener('click',function () {
+    pippete = true;
+    this.classList.add('bg_active');
+    if(pippete == true ){
+        canvas.addEventListener('click',function (event) {
+            pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;      
+        })
+        
+    }
+    
     
 })
 pencil.addEventListener('click',function (event) {
     pencil_flag = !pencil_flag;
+    fill_flag = false;
+    CleanFill();
         Draw();
         if(pencil_flag){
             pencil.classList.add('bg_active')
@@ -44,8 +64,10 @@ pencil.addEventListener('click',function (event) {
 function Draw() {
   
     
-canvas.addEventListener('mousedown', function (event) {
-var resultXmax,resultXmin,resultYmax,resultYmin;
+canvas.addEventListener('mousemove', function (event) {
+   
+   
+    var resultXmax,resultXmin,resultYmax,resultYmin;
     for(let i = 0 ; i <= 512 ; i+=128){
         if( i > event.offsetX){
             resultXmax = i;
@@ -68,9 +90,12 @@ var resultXmax,resultXmin,resultYmax,resultYmin;
     if(pencil_flag == true){
     ctx.fillStyle= current_color;
     ctx.fillRect(resultXmin,resultYmin,128,128);
+    
 }
 })
-
+canvas.addEventListener('mouseup',function () {
+    pencil_flag= false;
+})
 }
 
 
@@ -98,4 +123,15 @@ input_color.addEventListener('change',function () {
 
 function CleanPencil() {
     pencil.classList.remove('bg_active');
+}
+function CleanFill() {
+    bucket.classList.remove('bg_active');
+}
+function Fill() {
+    canvas.addEventListener('click',function (event) {
+        if(fill_flag){
+        ctx.fillStyle= current_color;
+    ctx.fillRect(0,0,512,512);
+}  
+})
 }
