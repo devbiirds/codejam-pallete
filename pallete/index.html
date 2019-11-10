@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Codejam-canvas</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="main">
+      <div class="up_box">
+        <div class="menu">
+          <object data="assets/menu.svg" type="text/svg"><img src="assets/menu.svg" alt="menu"/></object>
+          <div class="textlogo">CodeJam - Pallete</div>
+        </div>
+
+        <div class="options">
+          <object data="assets/options.svg" type="text/svg"><img src="assets/options.svg" alt="options"/></object>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="tools">
+          <div class="tools__items">
+            <div class="tools_item1">
+              <a href="#"><img class="icon" src="assets/icon-share.png" alt="" /><span>Paint bucket</span></a>
+              <a href="#"><img class="icon" src="assets/eye-dropper.png" alt="" /><span>Choose color</span></a>
+            </div>
+            <div class="line"></div>
+            <div class="tools_item2">
+              <a href="#"><img class="icon" src="assets/arrows-alt.png" alt="" /><span>Move</span></a>
+              <a href="#"><img class="icon" src="assets/exchange-alt.png" alt="" /><span>Transform</span></a>
+            </div>
+          </div>
+          <div class="tools__items">
+            <div class="tools_item1">
+              <a href="#">
+                <object
+                  class="ellipse_gray"
+                  data="assets/Ellipse_gray.svg"
+                  type="text/svg">  
+                <img src="assets/Ellipse.svg" alt="ellipse"/></object>
+                <span>Current color</span>
+              </a>
+              <a href="#">
+                <object
+                  class="ellipse_green"
+                  data="assets/Ellipse.svg"
+                  type="text/svg">
+                  <img src="assets/Ellipse.svg" alt="ellipse"/></object>
+                <span>Prev color</span>
+              </a>
+            </div>
+            <div class="line"></div>
+            <div class="tools_item2">
+              <a href="#">
+                <object
+                  class="ellipse_red"
+                  data="assets/Ellipse_red.svg"
+                  type="text/svg">
+                  <img src="assets/Ellipse.svg" alt="elipse"/></object>
+                <span>red</span>
+              </a>
+              <a href="#">
+                <object
+                  class="ellipse_blue"
+                  data="assets/Ellipse_blue.svg"
+                  type="text/svg">
+                  <img src="assets/Ellipse.svg" alt="elipse"/></object>
+                <span>blue</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="canvas_item">
+          <div class="button">
+            <div class="button__item" id="4x4"><span>4x4</span></div>
+            <div class="button__item " id="32x32"><span>32x32</span></div>
+            <div class="button__item " id="256x256"><span>256x256</span></div>
+          </div>
+          <canvas id="item" width="512px" height="512px"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
