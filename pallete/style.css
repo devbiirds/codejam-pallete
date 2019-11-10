@@ -81,52 +81,47 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
+ justify-content: space-evenly;
 }
-.tools_item1 {
-  padding-left: 35px;
-  display: flex;
-  flex-direction: column;
+.bucket{
+  cursor: pointer;
 }
-.tools_item1 a {
+canvas{
+  border: 1px solid black;
+}
+.pencil{
+  cursor: pointer;
+}
+.bg_active{
+  transform: translateX(-10px);
+  color:#000;
+}
+input[type="color"] {
+  display: none
+}
+.color_input{
+  height: 20px;
+  width: 20px;
+  border:1px solid black;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+
+}
+
+.inline{
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-left:30px;
+
 }
-.tools_item1 a img {
-  margin-right: 35px;
+.inline span{
+  margin-left:40px;
 }
-.tools_item2 {
-  display: flex;
-  flex-direction: column;
-  padding-left: 35px;
+.firstColor{
+  background: #008000;
+  
 }
-.line {
-  margin-top: 30px;
-  content: "";
-  width: 228px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
-}
-.tools_item2 a {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-.tools_item2 a img {
-  margin-right: 35px;
-}
-.tools__items:last-child {
-  margin-top: 100px;
-}
-.tools_item1 a object {
-  margin-right: 35px;
-}
-.tools_item2 a object {
-  margin-right: 35px;
-}
-.ellipse_gray {
-  fill: gray;
-}
-.canvas_item {
-  margin-right: 20%;
+.blue{
+  background: blue;
 }
