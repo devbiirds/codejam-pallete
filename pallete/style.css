@@ -89,6 +89,9 @@ a {
 canvas{
   border: 1px solid black;
 }
+.pipette{
+  cursor: pointer;
+}
 .pencil{
   cursor: pointer;
 }

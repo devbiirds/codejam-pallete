@@ -5,7 +5,6 @@ var prev_color = "#008000";
 var pencil = document.querySelector('.pencil');
 var choise_color = document.querySelector('.color_input');
 var choise_prev_color = document.querySelector('.color_input.prev');
-
 // flags 
 var pencil_flag = false;
 var pipette_flag = false;
@@ -13,7 +12,6 @@ var fill_flag = false;
 var draw = false;
 
 var pixelData;
-
 
 document.querySelector('.color_input.blue').addEventListener('click',function (event) {
     prev = current_color;
@@ -107,7 +105,7 @@ canvas.addEventListener('mousedown',function () {
    
    
         var resultXmax,resultXmin,resultYmax,resultYmin;
-        for(let i = 0 ; i <= 512 ; i+=16){
+        for(let i = 0 ; i <= 512 ; i+=128){
             if( i > event.offsetX){
                 resultXmax = i;
                 break;
@@ -117,7 +115,7 @@ canvas.addEventListener('mousedown',function () {
                 resultXmin = i;
             }
         }
-        for(let i = 0 ; i <= 512 ; i+=16){
+        for(let i = 0 ; i <= 512 ; i+=128){
             if(i > event.offsetY){
               resultYmax = i;
                 break;
@@ -128,7 +126,7 @@ canvas.addEventListener('mousedown',function () {
         }
         if(draw == true){
         ctx.fillStyle= current_color;
-        ctx.fillRect(resultXmin,resultYmin,16,16);
+        ctx.fillRect(resultXmin,resultYmin,128,128);
         
     }
     
@@ -173,27 +171,17 @@ function CleanFill() {
     fill_flag=false;
     bucket.classList.remove('bg_active');
 }
-function Fill() {
-    
+function Fill() {  
     canvas.addEventListener('click',function (event) {
         if(fill_flag){
         ctx.fillStyle= current_color;
     ctx.fillRect(0,0,512,512);
-}  
-
-})
-
-
+    }  
+  })
 }
 function CleanPippete() {
-    
         pipette.classList.remove('bg_active');
         pipette_flag = false;
-    
-        
-    
-    
-    
 }
 function rgbToHex(r, g, b) {
     if (r > 255 || g > 255 || b > 255)
