@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Codejam-canvas</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="main">
+      <div class="up_box">
+        <div class="menu">
+          <object data="assets/menu.svg" type="text/svg"><img src="assets/menu.svg" alt="menu"/></object>
+          <div class="textlogo">CodeJam - Pallete</div>
+        </div>
+
+        <div class="options">
+          <object data="assets/options.svg" type="text/svg"><img src="assets/options.svg" alt="options"/></object>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="tools">
+          <div class="tools__items">
+          
+              <div class="bucket inline"><img class="icon" src="assets/icon-share.png" alt="bucket" /><span>Paint bucket</span></div>
+              
+              <div class="pipette inline"><img class="icon" src="assets/eye-dropper.png" alt="pippete" /><span>Choose color</span></div>
+          
+            
+           
+              <div class="pencil inline" ><img class="icon" src="assets/pencil-alt-solid.png" alt="pencil" /><span>Pencil</span></div>
+
+              <div class="tranform inline" ><img class="icon" src="assets/exchange-alt.png" alt="Transform" /><span>Transform</span></div>
+           
+          </div>
+          <div class="tools__items">
+              <div class="current_color inline">
+                <div class="color_input firstColor"><input type="color" id="input_color" value="#008000"></div>
+                <span>Current color</span>
+              </div>
+              <div class="prev_color inline ">
+                <div class="color_input prev firstColor"></div>
+                <span>Prev color</span>
+              </div>
+         
+            
+            <div class="red_color inline">
+                <div class="color_input red"></div>
+                <span>red</span>
+              </div>
+              <div class="blue_color inline">
+                  <div class="color_input blue"></div>
+                <span>blue</span>
+              </div>
+            
+          </div>
+        </div>
+          <canvas id="pallete" width="512px" height="512px"></canvas>
+        </div>
+      </div>
+ 
+    <script src="script.js"></script>
+  </body>
+</html>
